@@ -1,0 +1,14 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "./packages/smart-dictation-core"
+    },
+    {
+      "path": "./packages/smart-dictation-provider"
+    },
+    {
+      "path": "./packages/smart-dictation-client"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "name": "@smart-dictation/dsh-provider",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./lib/index.js"
+    },
+    "./remote": {
+      "types": "./src/remote-client.ts",
+      "default": "./lib/remote-client.js"
+    },
+    "./typert": {
+      "types": "./src/typert-host.ts",
+      "default": "./lib/typert-host.js"
+    },
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "spike": "node scripts/spike-gigaam.mjs",
+    "test": "vitest run",
+    "build": "node scripts/build-host.mjs"
+  },
+  "dependencies": {
+    "@deepseek-ai/dsh-typert-protocol": "0.2.2-rc.1",
+    "@deepseek-ai/schemastery": "~3.19.0",
+    "onnxruntime-node": "1.20.1"
+  },
+  "files": [
+    "lib/**/*.js",
+    "src/**/*.ts",
+    "assets/**",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "devDependencies": {
+    "@deepseek-ai/cordis": "~4.1.0",
+    "@deepseek-ai/dsh-brand": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-experimental-speech-to-text": "0.2.2-rc.1",
+    "@smart-dictation/core": "workspace:*",
+    "esbuild": "^0.28.2",
+    "zod": "^4.0.0"
+  },
+  "description": "Host-local GigaAM v3 Russian speech recognition provider for DeepSeek Harness.",
+  "license": "MIT",
+  "author": "triagmas",
+  "homepage": "https://github.com/triagmas/smart-dictation-dsh#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/triagmas/smart-dictation-dsh.git",
+    "directory": "packages/smart-dictation-provider"
+  },
+  "bugs": {
+    "url": "https://github.com/triagmas/smart-dictation-dsh/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "speech-to-text",
+    "asr",
+    "gigaam",
+    "russian",
+    "local",
+    "onnx"
+  ],
+  "engines": {
+    "node": ">=22.19",
+    "dsh": ">=0.2.2-rc.1 <0.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

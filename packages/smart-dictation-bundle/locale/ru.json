@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Smart Dictation",
+    "description": "Локальная диктовка по-русски с английскими терминами и личным словарём.",
+    "detail": "docs/DETAIL.md"
+  }
+}

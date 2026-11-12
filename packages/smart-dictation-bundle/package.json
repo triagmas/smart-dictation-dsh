@@ -1,0 +1,66 @@
+{
+  "name": "@smart-dictation/dsh-bundle",
+  "version": "1.0.0",
+  "private": false,
+  "description": "Local Russian dictation with English technical terms and a durable personal glossary for DeepSeek Harness.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.png",
+    "./docs/*": "./docs/*"
+  },
+  "files": [
+    "lib/index.js",
+    "cordis.patch.yml",
+    "icon.png",
+    "locale/*.json",
+    "docs/DETAIL.md",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "dependencies": {
+    "@deepseek-ai/dsh-experimental-api-speech-to-text": "0.2.2-rc.2",
+    "@deepseek-ai/dsh-experimental-speech-to-text": "0.2.2-rc.2",
+    "@smart-dictation/dsh-client": "workspace:*",
+    "@smart-dictation/dsh-provider": "workspace:*"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "MIT",
+  "author": "triagmas",
+  "homepage": "https://github.com/triagmas/smart-dictation-dsh#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/triagmas/smart-dictation-dsh.git",
+    "directory": "packages/smart-dictation-bundle"
+  },
+  "bugs": {
+    "url": "https://github.com/triagmas/smart-dictation-dsh/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "bundle",
+    "dictation",
+    "speech-to-text",
+    "russian",
+    "gigaam",
+    "glossary"
+  ],
+  "engines": {
+    "node": ">=22.19",
+    "dsh": ">=0.2.2-rc.1 <0.3.0"
+  },
+  "icon": "./icon.png",
+  "publishConfig": {
+    "access": "public"
+  }
+}

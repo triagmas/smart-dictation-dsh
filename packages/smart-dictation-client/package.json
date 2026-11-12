@@ -1,0 +1,81 @@
+{
+  "name": "@smart-dictation/dsh-client",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": "./lib/client.js",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build-client.mjs",
+    "test": "vitest run"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@deepseek-ai/dsh-experimental-api-speech-to-text": "0.2.2-rc.1",
+    "@smart-dictation/core": "workspace:*",
+    "@smart-dictation/dsh-provider": "workspace:*",
+    "@types/react": "^18.3.12",
+    "esbuild": "^0.28.2",
+    "react": "^18.3.1",
+    "zod": "^4.0.0"
+  },
+  "dsh": {
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-api-remotes",
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-primitives",
+        "@deepseek-ai/dsh-api-gateway",
+        "@deepseek-ai/dsh-client-ui-plugin-manager"
+      ],
+      "external": []
+    }
+  },
+  "description": "DSH Web dictation control and personal glossary for Smart Dictation.",
+  "license": "MIT",
+  "author": "triagmas",
+  "homepage": "https://github.com/triagmas/smart-dictation-dsh#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/triagmas/smart-dictation-dsh.git",
+    "directory": "packages/smart-dictation-client"
+  },
+  "bugs": {
+    "url": "https://github.com/triagmas/smart-dictation-dsh/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dictation",
+    "speech",
+    "glossary",
+    "client"
+  ],
+  "engines": {
+    "node": ">=22.19",
+    "dsh": ">=0.2.2-rc.1 <0.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
