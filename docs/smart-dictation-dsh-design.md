@@ -60,9 +60,9 @@
 
 ## 7. Пакеты и установка
 
-`core` (private) → `provider` → `client` → `bundle`. Установочный артефакт — bundle `.tgz` из
-GitHub Release; его зависимости указывают на те же release-ассеты. Пакеты `provider`/`client` можно
-публиковать в npm отдельно, но установка bundle от npm не зависит.
+`core` (private) → `provider` → `client` → `bundle`. Bundle публикуется в npm как
+`@triagmas/dsh-smart-dictation` и остаётся доступен отдельным `.tgz` из GitHub Release; зависимости
+GitHub-сборки указывают на те же release-ассеты. Оба способа установки независимы.
 
 ## 8. Вне области v1.0
 

@@ -11,6 +11,7 @@
 | Сборка provider/client | PASS, `git diff` после сборки пуст |
 | Release tarballs `pnpm release:pack` | PASS, 3 файла |
 | `pnpm release:verify` | PASS: SHA-256, ассеты, locale, icon |
+| Установка `@triagmas/dsh-smart-dictation` из npm в чистый DSH-профиль | PASS, `dsh --dump-config` видит bundle |
 
 Покрытые регрессии:
 
