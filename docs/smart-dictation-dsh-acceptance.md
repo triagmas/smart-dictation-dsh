@@ -1,4 +1,4 @@
-# Приёмка Smart Dictation 1.0.0
+# Приёмка Smart Dictation 1.0.1
 
 Дата: 2026-11-13. Платформа: DSH Web, Linux, Chromium.
 

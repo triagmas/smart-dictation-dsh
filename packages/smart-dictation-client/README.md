@@ -1,4 +1,4 @@
-# @smart-dictation/dsh-client
+# @triagmas/dsh-smart-dictation-client
 
 DSH Web client for Smart Dictation.
 

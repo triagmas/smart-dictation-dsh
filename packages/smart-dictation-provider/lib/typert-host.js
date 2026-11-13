@@ -19749,16 +19749,16 @@ var glossaryReplaceRequestSchema = external_exports.object({
 // src/glossary-typert.ts
 var documentCodec = {
   mode: "strict",
-  typeSymbol: "@smart-dictation/dsh-provider#GlossaryDocument",
+  typeSymbol: "@triagmas/dsh-smart-dictation-provider#GlossaryDocument",
   create: () => glossaryDocumentSchema
 };
 var requestCodec = {
   mode: "strict",
-  typeSymbol: "@smart-dictation/dsh-provider#GlossaryReplaceRequest",
+  typeSymbol: "@triagmas/dsh-smart-dictation-provider#GlossaryReplaceRequest",
   create: () => glossaryReplaceRequestSchema
 };
 var GLOSSARY_REMOTE = createTypertRemoteInfo({
-  package: "@smart-dictation/dsh-provider",
+  package: "@triagmas/dsh-smart-dictation-provider",
   methods: {
     "glossary/read": {
       service: "glossary",
@@ -19788,7 +19788,7 @@ var GLOSSARY_REMOTE = createTypertRemoteInfo({
 
 // src/typert-host.ts
 var TYPERT = {
-  package: "@smart-dictation/dsh-provider",
+  package: "@triagmas/dsh-smart-dictation-provider",
   face: "host",
   schemas: [],
   get invocations() {

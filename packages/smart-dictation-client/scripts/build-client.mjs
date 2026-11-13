@@ -20,7 +20,7 @@ await build({
 })
 const body = await readFile(outfile, 'utf8')
 const wrapped = `window.__ModuleLoader__.load({
-  id: "@smart-dictation/dsh-client",
+  id: "@triagmas/dsh-smart-dictation-client",
   factory: (require) => {
     var module = { exports: {} };
     var exports = module.exports;

@@ -5,8 +5,16 @@ and learning all run on your machine. English developer terms stay in Latin scri
 
 ## Install
 
+From npm:
+
 ```bash
-dsh plugin --profile web add https://github.com/triagmas/smart-dictation-dsh/releases/download/v1.0.0/smart-dictation-dsh-bundle-1.0.0.tgz
+dsh plugin --profile web add @triagmas/dsh-smart-dictation
+```
+
+Or from the GitHub Release:
+
+```bash
+dsh plugin --profile web add https://github.com/triagmas/smart-dictation-dsh/releases/download/v1.0.1/smart-dictation-dsh-bundle-1.0.1.tgz
 ```
 
 Restart DSH and allow microphone access for the DSH Web origin.

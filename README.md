@@ -4,7 +4,7 @@
 латиницей, пунктуация, личный словарь и обучение только после подтверждения. Аудио и текст не
 покидают машину: облачные speech API не используются.
 
-**Статус:** `1.0.0`, DSH Web, локальный GigaAM v3 E2E CTC INT8.
+**Статус:** `1.0.1`, DSH Web, локальный GigaAM v3 E2E CTC INT8.
 
 ## Возможности
 
@@ -27,8 +27,16 @@
 
 Нужны DSH `0.2.2-rc.1`–`0.2.x`, Node.js 22.19+, рабочий микрофон и ~400 МБ свободного места.
 
+Из npm:
+
 ```bash
-dsh plugin --profile web add https://github.com/triagmas/smart-dictation-dsh/releases/download/v1.0.0/smart-dictation-dsh-bundle-1.0.0.tgz
+dsh plugin --profile web add @triagmas/dsh-smart-dictation
+```
+
+Или из GitHub Release:
+
+```bash
+dsh plugin --profile web add https://github.com/triagmas/smart-dictation-dsh/releases/download/v1.0.1/smart-dictation-dsh-bundle-1.0.1.tgz
 ```
 
 Перезапустите DSH и разрешите микрофон для адреса DSH Web. Первая диктовка сама подготовит модель;
@@ -63,8 +71,8 @@ dsh plugin --profile web add https://github.com/triagmas/smart-dictation-dsh/rel
 pnpm install
 pnpm typecheck
 pnpm vitest run
-pnpm --filter @smart-dictation/dsh-provider build
-pnpm --filter @smart-dictation/dsh-client build
+pnpm --filter @triagmas/dsh-smart-dictation-provider build
+pnpm --filter @triagmas/dsh-smart-dictation-client build
 pnpm release:pack
 pnpm release:verify
 ```

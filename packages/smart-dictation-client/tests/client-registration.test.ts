@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
 
 vi.mock('@deepseek-ai/dsh-experimental-api-speech-to-text/remote', () => ({ TYPERT_REMOTE: {} }))
-vi.mock('@smart-dictation/dsh-provider/remote', () => ({ TYPERT_REMOTE: {} }))
+vi.mock('@triagmas/dsh-smart-dictation-provider/remote', () => ({ TYPERT_REMOTE: {} }))
 
 import { apply } from '../src/client'
 
@@ -79,7 +79,7 @@ describe('client registration', () => {
     const dispose = await apply(context as never)
     expect(registrations).toContainEqual(expect.objectContaining({
       name: 'plugins.bundle.config',
-      key: '@smart-dictation/dsh-bundle'
+      key: '@triagmas/dsh-smart-dictation'
     }))
     await dispose()
   })

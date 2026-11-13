@@ -18,13 +18,13 @@ for (const item of release) {
   if (hash !== item.sha256) errors.push(`${item.tarball}: sha256 mismatch`)
   if ((await stat(path)).size !== item.bytes) errors.push(`${item.tarball}: size mismatch`)
   const listing = execFileSync('tar', ['-tzf', path], { encoding: 'utf8' }).split('\n')
-  if (item.package === '@smart-dictation/dsh-provider' && !listing.includes('package/assets/gigaam_v3.onnx')) {
+  if (item.package === '@triagmas/dsh-smart-dictation-provider' && !listing.includes('package/assets/gigaam_v3.onnx')) {
     errors.push('provider tarball is missing the 44 KB preprocessor asset')
   }
-  if (item.package === '@smart-dictation/dsh-client' && !listing.includes('package/lib/client.js')) {
+  if (item.package === '@triagmas/dsh-smart-dictation-client' && !listing.includes('package/lib/client.js')) {
     errors.push('client tarball is missing the browser bundle')
   }
-  if (item.package === '@smart-dictation/dsh-bundle') {
+  if (item.package === '@triagmas/dsh-smart-dictation') {
     for (const required of ['package/cordis.patch.yml', 'package/icon.png', 'package/locale/en.json', 'package/locale/ru.json', 'package/docs/DETAIL.md']) {
       if (!listing.includes(required)) errors.push(`bundle tarball is missing ${required}`)
     }

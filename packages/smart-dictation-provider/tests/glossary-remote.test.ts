@@ -63,11 +63,11 @@ describe('glossary remote', () => {
   })
 
   it('exposes matching host and client contracts', async () => {
-    expect(TYPERT.package).toBe('@smart-dictation/dsh-provider')
+    expect(TYPERT.package).toBe('@triagmas/dsh-smart-dictation-provider')
     expect(TYPERT.face).toBe('host')
     expect(TYPERT.invocations.map((item) => item.id).sort()).toEqual([
-      '@smart-dictation/dsh-provider#glossary/read',
-      '@smart-dictation/dsh-provider#glossary/replace'
+      '@triagmas/dsh-smart-dictation-provider#glossary/read',
+      '@triagmas/dsh-smart-dictation-provider#glossary/replace'
     ])
     expect(Object.keys(TYPERT_REMOTE.methods).sort()).toEqual(['glossary/read', 'glossary/replace'])
     const request = TYPERT_REMOTE.methods['glossary/replace']!.input({ strict: true }).create()

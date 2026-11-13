@@ -1,9 +1,17 @@
-# @smart-dictation/dsh-bundle
+# @triagmas/dsh-smart-dictation
 
 Installable DSH bundle for local Russian dictation with English technical terms.
 
+From npm:
+
 ```bash
-dsh plugin --profile web add https://github.com/triagmas/smart-dictation-dsh/releases/download/v1.0.0/smart-dictation-dsh-bundle-1.0.0.tgz
+dsh plugin --profile web add @triagmas/dsh-smart-dictation
+```
+
+Or from the GitHub Release:
+
+```bash
+dsh plugin --profile web add https://github.com/triagmas/smart-dictation-dsh/releases/download/v1.0.1/smart-dictation-dsh-bundle-1.0.1.tgz
 ```
 
 Restart DSH after installation. The first dictation downloads the GigaAM v3 model (~225 MB) to the

@@ -4,18 +4,18 @@ import { glossaryDocumentSchema, glossaryReplaceRequestSchema } from './glossary
 
 const documentCodec = {
   mode: 'strict' as const,
-  typeSymbol: '@smart-dictation/dsh-provider#GlossaryDocument',
+  typeSymbol: '@triagmas/dsh-smart-dictation-provider#GlossaryDocument',
   create: () => glossaryDocumentSchema
 }
 
 const requestCodec = {
   mode: 'strict' as const,
-  typeSymbol: '@smart-dictation/dsh-provider#GlossaryReplaceRequest',
+  typeSymbol: '@triagmas/dsh-smart-dictation-provider#GlossaryReplaceRequest',
   create: () => glossaryReplaceRequestSchema
 }
 
 export const GLOSSARY_REMOTE = createTypertRemoteInfo({
-  package: '@smart-dictation/dsh-provider',
+  package: '@triagmas/dsh-smart-dictation-provider',
   methods: {
     'glossary/read': {
       service: 'glossary',

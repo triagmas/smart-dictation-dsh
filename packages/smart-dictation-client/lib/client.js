@@ -1,5 +1,5 @@
 window.__ModuleLoader__.load({
-  id: "@smart-dictation/dsh-client",
+  id: "@triagmas/dsh-smart-dictation-client",
   factory: (require) => {
     var module = { exports: {} };
     var exports = module.exports;
@@ -35190,16 +35190,16 @@ ${content.join("\n")}
     });
     documentCodec = {
       mode: "strict",
-      typeSymbol: "@smart-dictation/dsh-provider#GlossaryDocument",
+      typeSymbol: "@triagmas/dsh-smart-dictation-provider#GlossaryDocument",
       create: () => glossaryDocumentSchema
     };
     requestCodec = {
       mode: "strict",
-      typeSymbol: "@smart-dictation/dsh-provider#GlossaryReplaceRequest",
+      typeSymbol: "@triagmas/dsh-smart-dictation-provider#GlossaryReplaceRequest",
       create: () => glossaryReplaceRequestSchema
     };
     GLOSSARY_REMOTE = createTypertRemoteInfo({
-      package: "@smart-dictation/dsh-provider",
+      package: "@triagmas/dsh-smart-dictation-provider",
       methods: {
         "glossary/read": {
           service: "glossary",
@@ -36717,7 +36717,7 @@ async function registerUi(scope) {
   }
   const settingsActions = {
     glossary,
-    openBundle: navigation === void 0 ? void 0 : () => navigation.openBundle("@smart-dictation/dsh-bundle"),
+    openBundle: navigation === void 0 ? void 0 : () => navigation.openBundle("@triagmas/dsh-smart-dictation"),
     prepareModel: async () => {
       const result = await scope.remote.speech.prepare("gigaam-local", void 0);
       if (!result.ok) throw new Error(result.error.message);
@@ -36738,7 +36738,7 @@ async function registerUi(scope) {
     try {
       return scope.slots.register({
         name: "plugins.bundle.config",
-        key: "@smart-dictation/dsh-bundle",
+        key: "@triagmas/dsh-smart-dictation",
         inject: () => settingsActions
       }, Settings);
     } catch (error63) {

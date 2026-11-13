@@ -1,4 +1,4 @@
-# @smart-dictation/dsh-provider
+# @triagmas/dsh-smart-dictation-provider
 
 Host-local GigaAM v3 E2E CTC provider for the DSH `speech-to-text` service.
 

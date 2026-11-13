@@ -1,6 +1,6 @@
 {
-  "name": "@smart-dictation/dsh-client",
-  "version": "1.0.0",
+  "name": "@triagmas/dsh-smart-dictation-client",
+  "version": "1.0.1",
   "private": false,
   "type": "module",
   "main": "lib/index.js",
@@ -30,7 +30,7 @@
   "devDependencies": {
     "@deepseek-ai/dsh-experimental-api-speech-to-text": "0.2.2-rc.1",
     "@smart-dictation/core": "workspace:*",
-    "@smart-dictation/dsh-provider": "workspace:*",
+    "@triagmas/dsh-smart-dictation-provider": "workspace:*",
     "@types/react": "^18.3.12",
     "esbuild": "^0.28.2",
     "react": "^18.3.1",

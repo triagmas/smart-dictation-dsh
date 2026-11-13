@@ -8,13 +8,13 @@
  */
 import { createHash } from 'node:crypto'
 import { execFileSync } from 'node:child_process'
-import { cp, mkdir, readFile, rm, stat, writeFile } from 'node:fs/promises'
+import { cp, mkdir, readFile, rename, rm, stat, writeFile } from 'node:fs/promises'
 import { existsSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
-const version = process.env.RELEASE_VERSION ?? '1.0.0'
+const version = process.env.RELEASE_VERSION ?? '1.0.1'
 const repo = process.env.RELEASE_REPO ?? 'triagmas/smart-dictation-dsh'
 const tag = process.env.RELEASE_TAG ?? `v${version}`
 const releaseBase = `https://github.com/${repo}/releases/download/${tag}`
@@ -78,10 +78,10 @@ for (const entry of packages) {
   delete manifest.private
   delete manifest.scripts
   delete manifest.devDependencies
-  if (manifest.name === '@smart-dictation/dsh-bundle') {
-    manifest.dependencies['@smart-dictation/dsh-client'] =
+  if (manifest.name === '@triagmas/dsh-smart-dictation') {
+    manifest.dependencies['@triagmas/dsh-smart-dictation-client'] =
       `${releaseBase}/smart-dictation-dsh-client-${version}.tgz`
-    manifest.dependencies['@smart-dictation/dsh-provider'] =
+    manifest.dependencies['@triagmas/dsh-smart-dictation-provider'] =
       `${releaseBase}/smart-dictation-dsh-provider-${version}.tgz`
   }
   await writeFile(resolve(stage, 'package.json'), JSON.stringify(manifest, null, 2) + '\n')
@@ -92,17 +92,21 @@ for (const entry of packages) {
   const packed = JSON.parse(output)
   const filename = packed[0]?.filename
   if (!filename) throw new Error(`${manifest.name}: npm pack returned no filename`)
-  const packedPath = resolve(artifactRoot, filename)
-  if (filename !== entry.tarball) throw new Error(`unexpected tarball name ${filename}, expected ${entry.tarball}`)
+  let packedPath = resolve(artifactRoot, filename)
+  if (filename !== entry.tarball) {
+    const renamed = resolve(artifactRoot, entry.tarball)
+    await rename(packedPath, renamed)
+    packedPath = renamed
+  }
   const { size } = await stat(packedPath)
   built.push({
     package: manifest.name,
     version,
-    tarball: filename,
+    tarball: entry.tarball,
     bytes: size,
     sha256: createHash('sha256').update(await readFile(packedPath)).digest('hex')
   })
-  console.log(`packed ${manifest.name} -> ${filename}`)
+  console.log(`packed ${manifest.name} -> ${entry.tarball}`)
 }
 
 await writeFile(

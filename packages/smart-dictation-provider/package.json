@@ -1,6 +1,6 @@
 {
-  "name": "@smart-dictation/dsh-provider",
-  "version": "1.0.0",
+  "name": "@triagmas/dsh-smart-dictation-provider",
+  "version": "1.0.1",
   "private": false,
   "type": "module",
   "main": "lib/index.js",

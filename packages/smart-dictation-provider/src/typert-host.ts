@@ -1,7 +1,7 @@
 import { GLOSSARY_REMOTE } from './glossary-typert'
 
 export const TYPERT = {
-  package: '@smart-dictation/dsh-provider',
+  package: '@triagmas/dsh-smart-dictation-provider',
   face: 'host',
   schemas: [],
   get invocations() { return GLOSSARY_REMOTE.descriptors },

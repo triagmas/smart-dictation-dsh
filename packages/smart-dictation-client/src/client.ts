@@ -56,7 +56,7 @@ export async function apply(ctx: ClientContext): Promise<() => Promise<void>> {
   let disposeGlossary: (() => Promise<void> | void) | undefined
 
   try {
-    const { TYPERT_REMOTE: glossaryRemote } = await import('@smart-dictation/dsh-provider/remote')
+    const { TYPERT_REMOTE: glossaryRemote } = await import('@triagmas/dsh-smart-dictation-provider/remote')
     disposeGlossary = await ctx.remote.$mount(glossaryRemote)
 
     // Remote namespaces are Cordis services in their own right (`remote.glossary`
@@ -122,7 +122,7 @@ async function registerUi(scope: ClientContext): Promise<void> {
     glossary,
     openBundle: navigation === undefined
       ? undefined
-      : () => navigation.openBundle('@smart-dictation/dsh-bundle'),
+      : () => navigation.openBundle('@triagmas/dsh-smart-dictation'),
     prepareModel: async () => {
       const result = await scope.remote.speech.prepare('gigaam-local', undefined)
       if (!result.ok) throw new Error(result.error.message)
@@ -144,7 +144,7 @@ async function registerUi(scope: ClientContext): Promise<void> {
     try {
       return scope.slots.register({
         name: 'plugins.bundle.config',
-        key: '@smart-dictation/dsh-bundle',
+        key: '@triagmas/dsh-smart-dictation',
         inject: () => settingsActions
       }, Settings)
     } catch (error) {
