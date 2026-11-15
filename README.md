@@ -27,16 +27,17 @@
 
 Нужны DSH `0.2.2-rc.3`–`0.2.x`, Node.js 22.19+, рабочий микрофон и ~400 МБ свободного места.
 
-Из npm:
-
-```bash
-dsh plugin --profile web add @triagmas/dsh-smart-dictation
-```
-
-Или из GitHub Release:
+Из GitHub Release:
 
 ```bash
 dsh plugin --profile web add https://github.com/triagmas/smart-dictation-dsh/releases/download/v1.0.2/smart-dictation-dsh-bundle-1.0.2.tgz
+```
+
+Пакет в npm (`@triagmas/dsh-smart-dictation`) пока содержит 1.0.1; после публикации 1.0.2
+установка из npm будет такой же:
+
+```bash
+dsh plugin --profile web add @triagmas/dsh-smart-dictation
 ```
 
 Перезапустите DSH и разрешите микрофон для адреса DSH Web. Первая диктовка сама подготовит модель;

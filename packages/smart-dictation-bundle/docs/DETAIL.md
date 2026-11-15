@@ -5,16 +5,17 @@ and learning all run on your machine. English developer terms stay in Latin scri
 
 ## Install
 
-From npm:
-
-```bash
-dsh plugin --profile web add @triagmas/dsh-smart-dictation
-```
-
-Or from the GitHub Release:
+From the GitHub Release:
 
 ```bash
 dsh plugin --profile web add https://github.com/triagmas/smart-dictation-dsh/releases/download/v1.0.2/smart-dictation-dsh-bundle-1.0.2.tgz
+```
+
+The npm package (`@triagmas/dsh-smart-dictation`) still serves 1.0.1; after 1.0.2 is published, the
+npm command is the same:
+
+```bash
+dsh plugin --profile web add @triagmas/dsh-smart-dictation
 ```
 
 Restart DSH and allow microphone access for the DSH Web origin.
