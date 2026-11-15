@@ -11,7 +11,7 @@ dsh plugin --profile web add @triagmas/dsh-smart-dictation
 Or from the GitHub Release:
 
 ```bash
-dsh plugin --profile web add https://github.com/triagmas/smart-dictation-dsh/releases/download/v1.0.1/smart-dictation-dsh-bundle-1.0.1.tgz
+dsh plugin --profile web add https://github.com/triagmas/smart-dictation-dsh/releases/download/v1.0.2/smart-dictation-dsh-bundle-1.0.2.tgz
 ```
 
 Restart DSH after installation. The first dictation downloads the GigaAM v3 model (~225 MB) to the
@@ -25,7 +25,7 @@ Do not enable the experimental official Voice Input bundle at the same time: bot
 
 ## Requirements
 
-- DSH `>=0.2.2-rc.1 <0.3.0`
+- DSH `>=0.2.2-rc.3 <0.3.0`
 - Node.js 22.19+
 - A working microphone and browser permission for the DSH Web origin
 - ~400 MB free disk after `onnxruntime-node` and the model

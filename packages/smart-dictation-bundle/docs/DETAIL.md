@@ -14,7 +14,7 @@ dsh plugin --profile web add @triagmas/dsh-smart-dictation
 Or from the GitHub Release:
 
 ```bash
-dsh plugin --profile web add https://github.com/triagmas/smart-dictation-dsh/releases/download/v1.0.1/smart-dictation-dsh-bundle-1.0.1.tgz
+dsh plugin --profile web add https://github.com/triagmas/smart-dictation-dsh/releases/download/v1.0.2/smart-dictation-dsh-bundle-1.0.2.tgz
 ```
 
 Restart DSH and allow microphone access for the DSH Web origin.
@@ -44,7 +44,7 @@ speech API is used. The glossary lives in the DSH data directory; `localStorage`
 
 ## Requirements and limits
 
-- DSH `0.2.2-rc.1`–`0.2.x`, Node.js 22.19+, ~400 MB free disk.
+- DSH `0.2.2-rc.3`–`0.2.x`, Node.js 22.19+, ~400 MB free disk.
 - Russian speech with English technical terms; full English phrases are not supported yet.
 - No auto-send, wake word, streaming subtitles, or speech synthesis.
 - Do not enable the official experimental Voice Input bundle at the same time.

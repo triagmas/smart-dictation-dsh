@@ -1,7 +1,7 @@
 import type { GlossaryDocument, GlossaryEntry } from '@smart-dictation/core'
 import { DictationRecorder } from './recorder'
 import { VoiceInput, type VoiceInputActions } from './VoiceInput'
-import { Settings, LEARNING_ENABLED_KEY } from './Settings'
+import { Settings, LEARNING_ENABLED_KEY, type ModelStatus } from './Settings'
 import { LearningController } from './learning'
 import type { SpeechTranscriber } from './dictation'
 import { ClientGlossaryStore } from './glossary-store'
@@ -16,6 +16,7 @@ interface RemoteSpeech {
     | { ok: false; error: { message: string } }
   >
   prepare(providerId: string, options?: unknown): Promise<{ ok: true } | { ok: false; error: { message: string } }>
+  catalog(): Promise<RemoteResult<{ providers: Array<{ id: string; preparation: ModelStatus }> }>>
 }
 
 type RemoteResult<T> = { ok: true; value: T } | { ok: false; error: { message: string } }
@@ -112,17 +113,18 @@ async function registerUi(scope: ClientContext): Promise<void> {
     glossary: () => glossary.entries,
     glossarySource: () => glossary.source
   }
-  let navigation: { openBundle(id: string): void } | undefined
-  try {
-    navigation = scope.get?.('pluginNavigation') as { openBundle(id: string): void } | undefined
-  } catch {
-    // The Plugins panel is optional in some clients.
-  }
   const settingsActions = {
     glossary,
-    openBundle: navigation === undefined
-      ? undefined
-      : () => navigation.openBundle('@triagmas/dsh-smart-dictation'),
+    reloadGlossary: async () => {
+      const next = await glossary.load()
+      if (!next.writable) throw new Error('Словарь доступен только для чтения.')
+      return next
+    },
+    modelStatus: async (): Promise<ModelStatus | undefined> => {
+      const result = await scope.remote.speech.catalog()
+      if (!result.ok) throw new Error(result.error.message)
+      return result.value.providers.find((provider) => provider.id === 'gigaam-local')?.preparation
+    },
     prepareModel: async () => {
       const result = await scope.remote.speech.prepare('gigaam-local', undefined)
       if (!result.ok) throw new Error(result.error.message)

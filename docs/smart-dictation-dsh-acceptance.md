@@ -1,6 +1,6 @@
-# Приёмка Smart Dictation 1.0.1
+# Приёмка Smart Dictation 1.0.2
 
-Дата: 2026-11-13. Платформа: DSH Web, Linux, Chromium.
+Дата: 2026-11-15. Платформа: DSH Web, Linux, Chromium.
 
 ## Автоматические проверки
 
@@ -12,6 +12,7 @@
 | Release tarballs `pnpm release:pack` | PASS, 3 файла |
 | `pnpm release:verify` | PASS: SHA-256, ассеты, locale, icon |
 | Установка `@triagmas/dsh-smart-dictation` из npm в чистый DSH-профиль | PASS, `dsh --dump-config` видит bundle |
+| Совместимость с DSH `0.2.2-rc.3` | PASS: speech/typert пакеты подняты до `0.2.2-rc.3`, профиль не отключает строки |
 
 Покрытые регрессии:
 

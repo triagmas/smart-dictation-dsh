@@ -14,7 +14,7 @@ import { dirname, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
-const version = process.env.RELEASE_VERSION ?? '1.0.1'
+const version = process.env.RELEASE_VERSION ?? '1.0.2'
 const repo = process.env.RELEASE_REPO ?? 'triagmas/smart-dictation-dsh'
 const tag = process.env.RELEASE_TAG ?? `v${version}`
 const releaseBase = `https://github.com/${repo}/releases/download/${tag}`

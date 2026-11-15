@@ -1,6 +1,6 @@
 {
   "name": "@triagmas/dsh-smart-dictation",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "description": "Local Russian dictation with English technical terms and a durable personal glossary for DeepSeek Harness.",
   "type": "module",
@@ -24,8 +24,8 @@
     "THIRD_PARTY_NOTICES.md"
   ],
   "dependencies": {
-    "@deepseek-ai/dsh-experimental-api-speech-to-text": "0.2.2-rc.2",
-    "@deepseek-ai/dsh-experimental-speech-to-text": "0.2.2-rc.2",
+    "@deepseek-ai/dsh-experimental-api-speech-to-text": "0.2.2-rc.3",
+    "@deepseek-ai/dsh-experimental-speech-to-text": "0.2.2-rc.3",
     "@triagmas/dsh-smart-dictation-client": "workspace:*",
     "@triagmas/dsh-smart-dictation-provider": "workspace:*"
   },
@@ -57,7 +57,7 @@
   ],
   "engines": {
     "node": ">=22.19",
-    "dsh": ">=0.2.2-rc.1 <0.3.0"
+    "dsh": ">=0.2.2-rc.3 <0.3.0"
   },
   "icon": "./icon.png",
   "publishConfig": {

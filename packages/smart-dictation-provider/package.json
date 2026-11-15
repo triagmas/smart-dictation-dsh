@@ -1,6 +1,6 @@
 {
   "name": "@triagmas/dsh-smart-dictation-provider",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "type": "module",
   "main": "lib/index.js",
@@ -27,7 +27,7 @@
     "build": "node scripts/build-host.mjs"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-typert-protocol": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-typert-protocol": "0.2.2-rc.3",
     "@deepseek-ai/schemastery": "~3.19.0",
     "onnxruntime-node": "1.20.1"
   },
@@ -41,11 +41,11 @@
   ],
   "devDependencies": {
     "@deepseek-ai/cordis": "~4.1.0",
-    "@deepseek-ai/dsh-brand": "0.2.2-rc.1",
-    "@deepseek-ai/dsh-experimental-speech-to-text": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-brand": "0.2.2-rc.3",
+    "@deepseek-ai/dsh-experimental-speech-to-text": "0.2.2-rc.3",
     "@smart-dictation/core": "workspace:*",
     "esbuild": "^0.28.2",
-    "zod": "^4.0.0"
+    "zod": "4.6.6"
   },
   "description": "Host-local GigaAM v3 Russian speech recognition provider for DeepSeek Harness.",
   "license": "MIT",
@@ -71,7 +71,7 @@
   ],
   "engines": {
     "node": ">=22.19",
-    "dsh": ">=0.2.2-rc.1 <0.3.0"
+    "dsh": ">=0.2.2-rc.3 <0.3.0"
   },
   "publishConfig": {
     "access": "public"
